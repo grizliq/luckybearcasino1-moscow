@@ -1,0 +1,53 @@
+:root {
+  --lb-c-2589FF: #2589FF;
+  --lb-c-25475C: #25475C;
+  --lb-c-111117: #111117;
+  --lb-c-FFFFFF: #FFFFFF;
+  --lb-c-5A7EA8: #5A7EA8;
+  --lb-c-2A7AD9: #2A7AD9;
+  --lb-c-262D36: #262D36;
+  --lb-c-06060C: #06060C;
+  --lb-c-09091C: #06060C;
+
+  --lb-font-display: "Widock TRIAL", "Arial Black", Arial, sans-serif;
+  --lb-font-title: "FindSans Pro", Arial, sans-serif;
+  --lb-font-body: "Inter", Arial, Helvetica, sans-serif;
+
+  --lb-space-1: 8px;
+  --lb-space-2: 12px;
+  --lb-space-3: 16px;
+  --lb-space-4: 24px;
+  --lb-space-5: 32px;
+  --lb-space-6: 48px;
+  --lb-w-page: 1200px;
+  --lb-w-main: 1100px;
+  --lb-w-narrow: 980px;
+  --lb-w-text: 900px;
+  --lb-gutter: 24px;
+}
+
+@media (max-width: 720px) {
+  :root { --lb-gutter: 16px; }
+}
+
+@font-face {
+  font-family: "Widock TRIAL";
+  src: url("../assets/fonts/Widock-TRIAL-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FindSans Pro";
+  src: url("../assets/fonts/FindSansPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

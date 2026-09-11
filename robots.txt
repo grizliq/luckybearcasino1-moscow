@@ -1,0 +1,10 @@
+﻿User-agent: *
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+Host: https://luckybearcasino1.moscow
+Sitemap: https://luckybearcasino1.moscow/sitemap.xml

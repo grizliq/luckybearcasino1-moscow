@@ -1,0 +1,11 @@
+/* Lucky Bear — светлая тема (семантика)
+   Подключать в сборке после tokens.css при Тема: светлая */
+
+:root {
+  --lb-bg: #FFFFFF;
+  --lb-text: #111117;
+  --lb-accent: #2589FF;
+  --lb-grad: #2A7AD9;
+  --lb-soft: #5A7EA8;
+  --lb-muted: #262D36;
+}
