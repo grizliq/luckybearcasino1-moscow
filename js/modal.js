@@ -2,18 +2,24 @@
   var YM = 113894003, REF = "fastgame777.xyz/9M8hLa";
   function goal(name) { if (window.ym) try { ym(YM, "reachGoal", name); } catch (e) {} }
 
+  var auto = document.getElementById("lb-bonus-modal");
+  var autoOnce = auto && auto.getAttribute("data-lb-modal-auto") === "once";
   var shown = 0, timer = null, started = Date.now();
   function isOpen(modal) { return modal.classList.contains("is-open"); }
-  function openModal(modal) {
+  function openModal(modal, automatic) {
     if (isOpen(modal)) return;
-    if (modal.id === "lb-bonus-modal") { if (shown >= 3) return; shown++; goal("bait_show"); }
+    if (modal === auto) {
+      if (autoOnce ? automatic && shown > 0 : shown >= 3) return;
+      shown++;
+      goal("bait_show");
+    }
     modal.classList.add("is-open");
   }
   function closeModal(modal) {
     if (!isOpen(modal)) return;
     modal.classList.remove("is-open");
     // повтор окна с бонусом: через 60 с, потом через 150 с, не больше трёх показов
-    if (modal.id === "lb-bonus-modal" && shown < 3) {
+    if (modal === auto && !autoOnce && shown < 3) {
       clearTimeout(timer);
       timer = setTimeout(function () { openModal(modal); }, shown < 2 ? 60000 : 150000);
     }
@@ -37,9 +43,10 @@
     if (e.key === "Escape") document.querySelectorAll(".lb-modal.is-open").forEach(closeModal);
   });
 
-  var auto = document.getElementById("lb-bonus-modal");
   if (auto && auto.getAttribute("data-lb-modal-auto") !== "off") {
-    setTimeout(function () { openModal(auto); }, 5000);
+    setTimeout(function () { openModal(auto, true); }, 5000);
+  }
+  if (auto && !autoOnce && auto.getAttribute("data-lb-modal-auto") !== "off") {
     // вернулся на вкладку (например, после перехода в казино) — напомнить про бонус
     document.addEventListener("visibilitychange", function () {
       if (document.visibilityState === "visible" && Date.now() - started > 20000 && shown < 3) {
