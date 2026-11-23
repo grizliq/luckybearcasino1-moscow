@@ -751,6 +751,8 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--lb-c-111117);
 }
 .lb-seo__col p strong { color: var(--lb-c-2589FF); font-weight: 600; }
+.lb-seo__text-link { color: var(--lb-c-2589FF); font-weight: 700; text-underline-offset: 4px; }
+.lb-seo__text-link:hover { text-decoration-thickness: 2px; }
 
 .lb-seo__list {
   margin: 0; padding: 0 0 0 4px;
